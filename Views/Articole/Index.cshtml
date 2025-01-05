@@ -1,0 +1,41 @@
+﻿@model IEnumerable<FlowerShop.Models.Articol>
+
+@{
+    ViewData["Title"] = "Articole";
+}
+
+<h1>Articole</h1>
+
+<p>
+    <a asp-action="Create">Adauga un nou articol</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Titlu)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Continut)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Titlu)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Continut)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ArticolID">Editeaza articolul</a> |
+                <a asp-action="Details" asp-route-id="@item.ArticolID">Detalii despre articol</a> |
+                <a asp-action="Delete" asp-route-id="@item.ArticolID">Sterge articolul</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

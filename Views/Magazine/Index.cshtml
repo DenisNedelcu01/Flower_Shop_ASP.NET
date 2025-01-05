@@ -1,0 +1,47 @@
+﻿@model IEnumerable<FlowerShop.Models.Magazin>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Produs)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Adresa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cantitate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Produs.ProdusID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Adresa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cantitate)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.MagazinId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.MagazinId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.MagazinId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

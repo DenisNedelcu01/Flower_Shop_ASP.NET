@@ -1,0 +1,15 @@
+﻿h1 {
+    font-size: 3.5rem;
+    font-weight: 600;
+    font-family: 'Times New Roman';
+    height: 100px;
+    color: #9223c2;
+}
+
+p{
+    font-size: 1.25rem;
+    font-weight: 350;
+    letter-spacing: 1px;
+    font-family: "Lucida";
+    width: 550px;
+}

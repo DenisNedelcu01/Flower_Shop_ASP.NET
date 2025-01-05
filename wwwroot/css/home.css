@@ -1,0 +1,36 @@
+﻿.title {
+    font-size: 3.5rem;
+    color: black;
+    font-weight: 200;
+}
+
+
+.subtitle {
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: #8037f7;
+    letter-spacing: 3px;
+    font-family: 'Verdana';
+    height: 150px;
+}
+
+p{
+    font-size: 1rem;
+    font-weight: 200;
+    color: #3652cf;
+
+}
+
+a{
+    font-size: 1rem;
+    font-weight: 400;
+    color: #5e3d93;
+}
+
+.privacy {
+    background-color: rgb(163, 178, 185);
+}
+
+.text-center{
+    height: 250px;
+}

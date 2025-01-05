@@ -1,0 +1,30 @@
+﻿@model FlowerShop.Models.Articol
+
+@{
+    ViewData["Title"] = "Detalii despre articol";
+}
+
+<h1>Detalii despre articol</h1>
+
+<div>
+    <h4>Articol</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Titlu)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Titlu)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Continut)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Continut)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.ArticolID">Editeaza articolul</a> |
+    <a asp-action="Index">Inapoi la articole</a>
+</div>

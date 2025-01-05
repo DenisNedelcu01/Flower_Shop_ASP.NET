@@ -1,0 +1,33 @@
+﻿@model FlowerShop.Models.Articol
+
+@{
+    ViewData["Title"] = "Sterge articolul";
+}
+
+<h1>Sterge articolul</h1>
+
+<h3>Esti sigur ca vrei sa stergi articolul?</h3>
+<div>
+    <h4>Articol</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Titlu)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Titlu)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Continut)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Continut)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ArticolID" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Inapoi la articole</a>
+    </form>
+</div>
