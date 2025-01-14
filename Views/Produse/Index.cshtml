@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<FlowerShop.Models.Produs>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Produse";
 }
 
-<h1>Index</h1>
+<h1>Produse</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -40,7 +40,14 @@
                 @Html.DisplayFor(modelItem => item.Stoc)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Galerie.GalerieId)
+                @if (item.Galerie != null && !string.IsNullOrEmpty(item.Galerie.Link))
+                {
+                    <img src="@item.Galerie.Link" alt="Photo" style="width: 150px; height: auto;">
+                }
+                else
+                {
+                    <span>No photo available</span>
+                }
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.ProdusID">Edit</a> |

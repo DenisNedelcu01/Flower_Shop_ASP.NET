@@ -278,3 +278,4 @@ C:\Users\dell\Desktop\FlowerShop\obj\Debug\net8.0\refint\FlowerShop.dll
 C:\Users\dell\Desktop\FlowerShop\obj\Debug\net8.0\FlowerShop.pdb
 C:\Users\dell\Desktop\FlowerShop\obj\Debug\net8.0\FlowerShop.genruntimeconfig.cache
 C:\Users\dell\Desktop\FlowerShop\obj\Debug\net8.0\ref\FlowerShop.dll
+C:\Users\dell\Desktop\FlowerShop\obj\Debug\net8.0\FlowerShop.sourcelink.json

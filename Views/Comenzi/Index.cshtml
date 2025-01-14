@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<FlowerShop.Models.Comanda>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Comenzi";
 }
 
-<h1>Index</h1>
+<h1>Comenzi</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -13,7 +13,7 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Produs)
+                @Html.DisplayName("Produs")
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Data)
@@ -28,7 +28,14 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Produs.ProdusID)
+                @if (item.Produs != null)
+                {
+                    @Html.DisplayFor(modelItem => item.Produs.Nume)
+                }
+                else
+                {
+                    <span>Not Assigned</span>
+                }
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Data)

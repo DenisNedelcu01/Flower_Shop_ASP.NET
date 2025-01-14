@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<FlowerShop.Models.Galerie>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Galerie";
 }
 
-<h1>Index</h1>
+<h1>Galerie</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -28,7 +28,7 @@
                 @Html.DisplayFor(modelItem => item.Nume)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Link)
+                <img src="@item.Link" alt="Photo" style="width: 150px; height: auto;">
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.GalerieId">Edit</a> |

@@ -61,7 +61,7 @@ namespace FlowerShop.Controllers
                 _magazinService.Save();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ProdusID"] = new SelectList(_produsService.GetProdus(), "ProdusID", "NumeProdus", magazin.ProdusId);
+            ViewData["ProdusID"] = new SelectList(_produsService.GetProdus(), "ProdusID", "NumeProdus", magazin.ProdusID);
             return View(magazin);
         }
 
@@ -79,13 +79,13 @@ namespace FlowerShop.Controllers
             {
                 return NotFound();
             }
-            ViewData["ProdusID"] = new SelectList(_produsService.GetProdus(), "ProdusID", "NumeProdus");
+
+            // Pass the current ProdusID to pre-select it in the dropdown
+            ViewData["ProdusID"] = new SelectList(_produsService.GetProdus(), "ProdusID", "NumeProdus", magazin.ProdusID);
             return View(magazin);
         }
 
         // POST: Magazin/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int? id, [Bind("MagazinId,Adresa,Cantitate,ProdusID")] Magazin magazin)
@@ -115,9 +115,12 @@ namespace FlowerShop.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ProdusID"] = new SelectList(_produsService.GetProdus(), "ProdusID", "NumeProdus");
+
+            // Ensure the dropdown list is repopulated when returning the view with errors
+            ViewData["ProdusID"] = new SelectList(_produsService.GetProdus(), "ProdusID", "NumeProdus", magazin.ProdusID);
             return View(magazin);
         }
+
 
         // GET: Magazin/Delete/5
         public IActionResult Delete(int? id)

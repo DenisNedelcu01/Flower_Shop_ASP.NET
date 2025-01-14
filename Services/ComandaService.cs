@@ -1,5 +1,6 @@
 ﻿using FlowerShop.Models;
 using FlowerShop.Repositories.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 
 namespace FlowerShop.Services
@@ -13,7 +14,9 @@ namespace FlowerShop.Services
 
         public List<Comanda> GetComanda()
         {
-            return repositoryWrapper.ComandaRepository.FindAll().ToList();
+            return repositoryWrapper.ComandaRepository.FindAll()
+                .Include(c => c.Produs)
+                .ToList();
         }
 
         public List<Comanda> GetComandaByCondition(Expression<Func<Comanda, bool>> expression)

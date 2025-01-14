@@ -9,7 +9,7 @@ namespace FlowerShop.Models
         
         [ForeignKey("ProdusId")]
         public Produs? Produs { get; set; }
-        public int? ProdusId { get; set; }
+        public int? ProdusID { get; set; }
         public DateTime Data { get; set; } = DateTime.UtcNow;
         public float? Cost { get; set; }
     }

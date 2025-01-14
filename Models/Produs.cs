@@ -16,5 +16,6 @@ namespace FlowerShop.Models
         public Galerie? Galerie { get; set; }
         public int? GalerieId { get; set; }
         public ICollection<Comanda>? Comenzi { get; set; }
+        public ICollection<Magazin>? Magazine { get; set; }
     }
 }

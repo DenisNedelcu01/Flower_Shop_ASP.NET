@@ -63,7 +63,7 @@ namespace FlowerShop.Controllers
                 _comandaService.Save();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ProdusID"] = new SelectList(_produsService.GetProdus(), "ProdusID", "Nume", comanda.ProdusId);
+            ViewData["ProdusID"] = new SelectList(_produsService.GetProdus(), "ProdusID", "Nume", comanda.ProdusID);
             return View(comanda);
         }
 
@@ -80,7 +80,7 @@ namespace FlowerShop.Controllers
             {
                 return NotFound();
             }
-            ViewData["ProdusID"] = new SelectList(_produsService.GetProdus(), "ProdusID", "Nume", comanda.ProdusId);
+            ViewData["ProdusID"] = new SelectList(_produsService.GetProdus(), "ProdusID", "Nume", comanda.ProdusID);
             return View(comanda);
         }
 
@@ -117,7 +117,7 @@ namespace FlowerShop.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ProdusID"] = new SelectList(_produsService.GetProdus(), "ProdusID", "ProdusID", comanda.ProdusId);
+            ViewData["ProdusID"] = new SelectList(_produsService.GetProdus(), "ProdusID", "ProdusID", comanda.ProdusID);
             return View(comanda);
         }
 

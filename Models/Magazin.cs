@@ -9,7 +9,7 @@ namespace FlowerShop.Models
       
         [ForeignKey("ProdusId")]
         public Produs? Produs { get; set; }
-        public int? ProdusId { get; set; }
+        public int? ProdusID { get; set; }
         public string? Adresa { get; set; }
         public int? Cantitate { get; set; }
     }
